@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#1a1a2e">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Steering Wheel"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#e0e0e0"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="900° Mode"
+        android:textSize="14sp"
+        android:textColor="#888888"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- IP Address Input -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PC IP Address"
+        android:textColor="#aaaaaa"
+        android:textSize="13sp"
+        android:layout_marginBottom="6dp"/>
+
+    <EditText
+        android:id="@+id/ipInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. 192.168.1.100"
+        android:inputType="text"
+        android:digits="0123456789."
+        android:textColor="#ffffff"
+        android:textColorHint="#555555"
+        android:background="#2a2a3e"
+        android:padding="14dp"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Port Input -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Port"
+        android:textColor="#aaaaaa"
+        android:textSize="13sp"
+        android:layout_marginBottom="6dp"/>
+
+    <EditText
+        android:id="@+id/portInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="5555"
+        android:inputType="number"
+        android:textColor="#ffffff"
+        android:textColorHint="#555555"
+        android:background="#2a2a3e"
+        android:padding="14dp"
+        android:textSize="18sp"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Connect Button -->
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Connect"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:backgroundTint="#4f46e5"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Status -->
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Not connected"
+        android:textColor="#888888"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Live Sensor Readout -->
+    <TextView
+        android:id="@+id/angleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yaw: --   Gyro Z: --"
+        android:textColor="#4f46e5"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:fontFamily="monospace"/>
+
+</LinearLayout>
