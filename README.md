@@ -215,7 +215,7 @@ Phone at 300° → output = 300°. Centre is correct.
 1. Install the APK
 2. Connect to same WiFi as PC
 3. Place phone in mount **Current point is set as centre**
-4. Enter PC's IP + port 5555 → tap Connect **Current point is set as centre**
+4. Enter PC's IP + port 5555 → tap Connect
 
 ### ETS2
 
