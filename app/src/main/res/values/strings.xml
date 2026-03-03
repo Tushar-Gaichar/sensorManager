@@ -1,3 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">sensorManager</string>
+    <string name="app_name">Steering Wheel</string>
+
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="connecting">Connecting…</string>
+    <string name="disconnected">Not connected</string>
+    <string name="connected_to">Connected to %1$s</string>
+    <string name="error_msg">Error: %1$s</string>
+    <string name="enter_ip">Please enter the PC IP address</string>
+    <string name="invalid_port">Invalid port number</string>
+    <string name="error_no_gyroscope">ERROR: No gyroscope detected on this device</string>
+
+    <string name="yaw_default">Yaw: ——</string>
+    <string name="yaw_display">Yaw: %1$.1f°</string>
+
+    <string name="set_centre">⊙  Set This Point as Centre</string>
+    <string name="centre_auto_set">Centre auto-set on connect</string>
+    <string name="centre_set_at">Centre set at %1$.1f°</string>
+
+    <string name="left_indicator">◀</string>
+    <string name="right_indicator">▶</string>
+    <string name="lights">💡 Lights</string>
+    <string name="cruise">CC Cruise</string>
 </resources>
