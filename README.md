@@ -177,30 +177,6 @@ Raw orient + gyro_z + timestamp
 
 ---
 
-### Overwind Problem
-
-**The problem:** Rotating past 450° keeps accumulating internally. When you rotate back, the excess must "unwind" before the wheel moves — feels like centre drifted.
-
-**The fix I had tried but didn't work - resume threshold:**
-```python
-# Phone crosses ±MAX_LOCK for the first time
-overwind_threshold = fused_angle + total_delta   # record phone's real position
-fused_angle = MAX_LOCK                            # freeze output
-
-# Each frame while overwound:
-if overwind_threshold > 0 and fused_angle + total_delta <= overwind_threshold:
-    overwind_threshold = None   # phone returned — resume immediately
-```
-```
-Phone at 430° → normal
-Phone at 450° → freeze. Threshold recorded at 452°
-Phone at 600° → still frozen
-Phone returns to 452° → threshold cleared, tracking resumes from 450°
-Phone at 300° → output = 300°. Centre is correct.
-```
-
----
-
 ## 🔧 Setup Guide
 
 ### PC
@@ -251,6 +227,32 @@ uset g_steering_speed "0.0"
 | vJoy error | Check device ID matches, X axis enabled in Configure vJoy |
 | 0 Hz in console | App not connected or still on connection screen |
 | Centre drifts after hard lock | Turn in the locked wheel direction till where you hit the limit and then start rotating back — tracking resumes there |
+
+---
+---
+
+## Known Issues:
+### Overwind Problem
+
+**The problem:** Rotating past 450° keeps accumulating internally. When you rotate back, the excess must "unwind" before the wheel moves — feels like centre drifted.
+
+**The fix I had tried but didn't work - resume threshold:**
+```python
+# Phone crosses ±MAX_LOCK for the first time
+overwind_threshold = fused_angle + total_delta   # record phone's real position
+fused_angle = MAX_LOCK                            # freeze output
+
+# Each frame while overwound:
+if overwind_threshold > 0 and fused_angle + total_delta <= overwind_threshold:
+    overwind_threshold = None   # phone returned — resume immediately
+```
+```
+Phone at 430° → normal
+Phone at 450° → freeze. Threshold recorded at 452°
+Phone at 600° → still frozen
+Phone returns to 452° → threshold cleared, tracking resumes from 450°
+Phone at 300° → output = 300°. Centre is correct.
+```
 
 ---
 
