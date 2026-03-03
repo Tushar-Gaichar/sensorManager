@@ -96,117 +96,148 @@
     </LinearLayout>
 
     <!-- ═══════════════════════════════════════════════ -->
-    <!-- CONTROLLER SCREEN                               -->
+    <!-- CONTROLLER SCREEN (horizontal layout)           -->
     <!-- ═══════════════════════════════════════════════ -->
     <LinearLayout
         android:id="@+id/controllerScreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="20dp"
+        android:orientation="horizontal"
+        android:padding="12dp"
         android:visibility="gone">
 
-        <!-- Live angle display -->
-        <TextView
-            android:id="@+id/angleDisplay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Yaw: 0.0°"
-            android:textColor="#4f46e5"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:fontFamily="monospace"
-            android:layout_marginBottom="8dp"/>
-
-        <!-- Centre status -->
-        <TextView
-            android:id="@+id/centreStatusText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/centre_auto_set"
-            android:textColor="#666688"
-            android:textSize="12sp"
-            android:gravity="center"
-            android:layout_marginBottom="20dp"/>
-
-        <!-- Set Centre button -->
-        <Button
-            android:id="@+id/setCentreButton"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:text="@string/set_centre"
-            android:textSize="15sp"
-            android:textColor="#ffffff"
-            android:backgroundTint="#1e1e3a"
-            android:layout_marginBottom="32dp"/>
-
-        <!-- Divider -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#1e1e3a"
-            android:layout_marginBottom="32dp"/>
-
-        <!-- Indicators row -->
+        <!-- ── LEFT COLUMN — angle display + centre set ── -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingEnd="12dp">
 
-            <Button
-                android:id="@+id/btnLeftIndicator"
-                android:layout_width="0dp"
-                android:layout_height="72dp"
-                android:layout_weight="1"
-                android:text="@string/left_indicator"
-                android:textSize="24sp"
-                android:backgroundTint="#1a3a1a"
-                android:alpha="0.5"
-                android:layout_marginEnd="8dp"/>
+            <!-- Live angle readout -->
+            <TextView
+                android:id="@+id/angleDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.0°"
+                android:textColor="#4f46e5"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="4dp"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="steering angle"
+                android:textColor="#444466"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Centre status -->
+            <TextView
+                android:id="@+id/centreStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/centre_auto_set"
+                android:textColor="#666688"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Set Centre button -->
             <Button
-                android:id="@+id/btnRightIndicator"
-                android:layout_width="0dp"
-                android:layout_height="72dp"
-                android:layout_weight="1"
-                android:text="@string/right_indicator"
-                android:textSize="24sp"
-                android:backgroundTint="#1a3a1a"
-                android:alpha="0.5"
-                android:layout_marginStart="8dp"/>
+                android:id="@+id/setCentreButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/set_centre"
+                android:textSize="13sp"
+                android:textColor="#ffffff"
+                android:backgroundTint="#1e1e3a"/>
 
         </LinearLayout>
 
-        <!-- Lights + Cruise row -->
+        <!-- ── VERTICAL DIVIDER ── -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#1e1e3a"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="12dp"/>
+
+        <!-- ── RIGHT COLUMN — all control buttons ── -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical"
+            android:gravity="center">
 
-            <Button
-                android:id="@+id/btnLights"
-                android:layout_width="0dp"
-                android:layout_height="72dp"
+            <!-- Indicators row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/lights"
-                android:textSize="22sp"
-                android:backgroundTint="#3a3a1a"
-                android:alpha="0.5"
-                android:layout_marginEnd="8dp"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
 
-            <Button
-                android:id="@+id/btnCruise"
-                android:layout_width="0dp"
-                android:layout_height="72dp"
+                <Button
+                    android:id="@+id/btnLeftIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/left_indicator"
+                    android:textSize="28sp"
+                    android:backgroundTint="#1a3a1a"
+                    android:alpha="0.5"
+                    android:layout_marginEnd="6dp"/>
+
+                <Button
+                    android:id="@+id/btnRightIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/right_indicator"
+                    android:textSize="28sp"
+                    android:backgroundTint="#1a3a1a"
+                    android:alpha="0.5"
+                    android:layout_marginStart="6dp"/>
+
+            </LinearLayout>
+
+            <!-- Lights + Cruise row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/cruise"
-                android:textSize="16sp"
-                android:backgroundTint="#1a2a3a"
-                android:alpha="0.5"
-                android:layout_marginStart="8dp"/>
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnLights"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/lights"
+                    android:textSize="20sp"
+                    android:backgroundTint="#3a3a1a"
+                    android:alpha="0.5"
+                    android:layout_marginEnd="6dp"/>
+
+                <Button
+                    android:id="@+id/btnCruise"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/cruise"
+                    android:textSize="14sp"
+                    android:backgroundTint="#1a2a3a"
+                    android:alpha="0.5"
+                    android:layout_marginStart="6dp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
